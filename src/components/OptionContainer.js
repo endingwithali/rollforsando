@@ -1,29 +1,47 @@
 import React, {useState} from 'react';
-import OptionInput from './OptionInput';
+
+function generateArray(lenght){
+    let initArray = []
+    for (let i = 0; i <lenght;i++){
+        initArray.push({id: (Math . random() + 1). toString(36).substring(2),value:""})
+    }
+    return initArray
+}
 
 export default function OptionContainer({initAmount, className}){
 
-    const [elements, setElements] = useState([]);
+    
+    const [elements, setElements] = useState(generateArray(initAmount));
 
     function handleAdd() {
-        setElements([...elements,<OptionInput id={className + elements.length+1}/>])
+        setElements([...elements, {id: (Math . random() + 1). toString(36).substring(2),value:""}])
     }
 
-    function handleDelete(key){
-        // setElements(elements => {
-        //     return elements.filter(input => input.key !== key)
-        // })
-        setElements(state => state.splice(key, 1));
+    function handleDelete(id){
+        // const listCopy = [...elements];
+        // listCopy.splice(key, 1);
+        // setElements(listCopy);
+        // this.state.people.filter((_, i) => i !== index
+        console.log(elements)
+        console.log(id)
+        setElements(elements => elements.filter((element) => element.id != id ))
+    }
 
+    function handleChange(index, value){
+        // console.log(val)
+        console.log(elements)
+        elements[index]={id:elements[index].id,value:value}
+        setElements(elements)
     }
 
     return(
         <>
             <div id={className+"list"}>
                 {elements.map((item, index) =>
-                    <div key={className + index}>
-                            <OptionInput>{item}</OptionInput>
-                            <button onClick={() => handleDelete(className+index)}>-</button>
+                    <div key={item.id}>
+                        {/* {console.log(item)} */}
+                        <input onChange={e => handleChange(index, e.target.value)}/>
+                        <button onClick={() => handleDelete(item.id)}>-</button>
                     </div>
                 )}
             </div>
