@@ -5,8 +5,8 @@ import OptionContainer from './components/OptionContainer';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      {/* <header className="App-header">
+      </header> */}
       <OptionContainer initAmount={6} className="bread"/>
     </div>
   );

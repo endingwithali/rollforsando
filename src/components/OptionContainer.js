@@ -2,33 +2,32 @@ import React, {useState} from 'react';
 import OptionInput from './OptionInput';
 
 export default function OptionContainer({initAmount, className}){
-    let itemList=[];
-    for (let i =0 ; i< initAmount; i++) {
-        itemList.push(
-            <div key={className + i}>
-                <OptionInput/>
-                <button onClick={handleDelete(className+i)}>-</button>
-            </div>
-        )
-    }
-    const [elements, setElements] = useState(itemList);
+
+    const [elements, setElements] = useState([]);
 
     function handleAdd() {
         setElements([...elements,<OptionInput id={className + elements.length+1}/>])
     }
+
     function handleDelete(key){
-        setElements(oldValues => {
-            return oldValues.filter(input => input.key !== key)
-        })
-        console.log(key)
+        // setElements(elements => {
+        //     return elements.filter(input => input.key !== key)
+        // })
+        setElements(state => state.splice(key, 1));
+
     }
 
     return(
         <>
-         <div>
-             <div id={className+"list"}>{elements}</div>
-            <button onClick={handleAdd}>Add New Item</button>
-         </div>
+            <div id={className+"list"}>
+                {elements.map((item, index) =>
+                    <div key={className + index}>
+                            <OptionInput>{item}</OptionInput>
+                            <button onClick={() => handleDelete(className+index)}>-</button>
+                    </div>
+                )}
+            </div>
+            <button onClick={handleAdd}>Add New Ingredient</button>
         </>
     );
 }
