@@ -1,7 +1,6 @@
 import './App.css';
 import OptionContainer from './components/OptionContainer';
 import React, {useState} from 'react';
-import { isCompositeComponent } from 'react-dom/test-utils';
 
 
 function App() {
@@ -14,27 +13,19 @@ function App() {
     initAmount: 6,
     values: []
   }]);
-  console.log(parts)
+  const [sandwichValues, setSandwichValues] = useState([])
 
   function handleRoll(){
     let sandwich = []
     parts.forEach((part)=>{
-      console.log(part.value.length)
-      console.log(part)
-      sandwich.push(part.values[Math.floor((Math.random() * (part.values.length)))])
+      if (part.values.length!=0) {
+        let generateValue = part.values[Math.floor((Math.random() * (part.values.length)))].value
+        if (generateValue !== "") {
+          sandwich.push(generateValue)
+        }
+      }
     })
-    console.log(sandwich)
-    console.log("rolling")
-    
-
-    /**
-     * for each optioncontainer
-     * get lenght of number of children elements where child == input
-     * get values
-     * rng a number based on those values
-     * get the value mapped to the rng number
-     * store value for later in array of selected valus
-     */
+    setSandwichValues(sandwich)
   }
 
   /* main = the meat 
@@ -60,57 +51,12 @@ function App() {
               <OptionContainer parentIndex={index} parentState={parts}></OptionContainer>
             )}
       </div>
-  
-      {/* <OptionContainer initAmount={6} className="bread" state={parts[0]}/> */}
-      {/* <OptionContainer initAmount={6} className="main"/>  */}
       <button onClick={() => handleRoll()}>Roll for Sandwich</button>
-    </div>
+      {sandwichValues.map((value) =>
+          <h2>{value}</h2>
+      )}
+      </div>
   );
 }
 
 export default App;
-
-// const [sandwich, setSandwich] = useState[{heading: 'bread', values:[]}]
-// return (
-//   div 
-//   ((v)=>OptionContainer val=v setState={setSandwich})
-// )
-
-// state = [{
-//   id: "bread",
-//   selectedValue: ""
-// }, {
-//   id: "roughage",
-//   selectedValue: ""
-// }, {
-//   id: "main",
-//   selectedValue: ""
-// }]
-
-// in OptionContainer
-
-// elements,setelements = usestate(state(passed prop))
-
-
-
-// input onchange =>
-// elements.get(passedprop id)[index] = {id:elements[index].id,value:value}
-// setElements (elements)
-
-
-// in App
-// roll onclick =>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -14,22 +14,23 @@ export default function OptionContainer({parentIndex, parentState}){
     const className = parentElements[parentIndex].id
     const [elements, setElements] = useState(generateArray(initAmount));
 
+
     function handleAdd() {
         setElements([...elements, {id: (Math . random() + 1). toString(36).substring(2),value:""}])
-        parentElements[parentIndex].value = elements
+        parentElements[parentIndex].values = elements
         setParentState(parentElements)
     }
 
     function handleDelete(id){
         setElements(elements => elements.filter((element) => element.id !== id ))
-        parentElements[parentIndex].value = elements
+        parentElements[parentIndex].values = elements
         setParentState(parentElements)
     }
 
     function handleChange(index, value){
         elements[index]={id:elements[index].id,value:value}
         setElements(elements)
-        parentElements[parentIndex].value = elements
+        parentElements[parentIndex].values = elements
         setParentState(parentElements)
     }
 
