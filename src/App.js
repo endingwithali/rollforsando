@@ -1,9 +1,12 @@
 import './App.css';
 import OptionContainer from './components/OptionContainer';
-import React, {useState} from 'react';
+import React, {useState,useRef} from 'react';
 
 
 function App() {
+  const [toastState, setToastState] = useState(false)
+  const checkbox = useRef();
+
   const [parts, setParts] = useState([{
     id: "bread",
     initAmount: 6,
@@ -26,6 +29,12 @@ function App() {
       }
     })
     setSandwichValues(sandwich)
+  }
+
+
+  function handleToast() {
+    setToastState(checkbox.current.checked)
+
   }
 
   /* main = the meat 
@@ -52,6 +61,12 @@ function App() {
               <OptionContainer parentIndex={index} parentState={parts}></OptionContainer>
             )}
       </div>
+
+      <div>
+        <input type="checkbox" id="scales" name="scales" onChange={()=> handleToast()} ref={checkbox}/>
+        <label for="scales">Include roll for Toast</label>
+    </div>
+
       <button onClick={() => handleRoll()}>Roll for Sandwich</button>
       {sandwichValues.map((value) =>
           <h2>{value}</h2>
