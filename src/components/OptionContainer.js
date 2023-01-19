@@ -36,8 +36,8 @@ export default function OptionContainer({parentIndex, parentState}){
     }
 
     return(
-        <div class="overflow-x-auto h-48 container mx-sm bg-blue-600" >
-            <div class="flex space-y-4 flex-wrap flex-col"  id={className+"list"}>
+        <div class=" h-48 container-sm bg-blue-600" >
+            <div class="grid grid-flow-col overflow-x-auto"id={className+"list"}>
                 {elements.map((item, index) =>
                     <div class="space-x-3" key={item.id}>
                         <input class="outline" onChange={e => handleChange(index, e.target.value)}/>
