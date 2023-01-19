@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './Option.css';
 
 function generateArray(lenght){
     let initArray = []
@@ -35,16 +36,16 @@ export default function OptionContainer({parentIndex, parentState}){
     }
 
     return(
-        <>
-            <div id={className+"list"}>
+        <div class="overflow-x-auto h-48 container mx-sm bg-blue-600" >
+            <div class="flex space-y-4 flex-wrap flex-col"  id={className+"list"}>
                 {elements.map((item, index) =>
-                    <div key={item.id}>
-                        <input onChange={e => handleChange(index, e.target.value)}/>
-                        <button onClick={() => handleDelete(item.id)}>-</button>
+                    <div class="space-x-3" key={item.id}>
+                        <input class="outline" onChange={e => handleChange(index, e.target.value)}/>
+                        <button class="outline bg-gray w-6" onClick={() => handleDelete(item.id)}>-</button>
                     </div>
                 )}
             </div>
             <button onClick={handleAdd}>Add New Ingredient</button>
-        </>
+        </div>
     );
 }

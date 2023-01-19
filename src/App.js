@@ -46,7 +46,8 @@ function App() {
     <div className="App">
       {/* <header className="App-header">
       </header> */}
-      <div id={"lists"}>
+      <h1 class="text-6xl font-header-font">Roll for Sandwich</h1>
+      <div id={"lists"} class="space-y-4">
             {parts.map((item, index) =>
               <OptionContainer parentIndex={index} parentState={parts}></OptionContainer>
             )}
