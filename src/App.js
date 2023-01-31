@@ -56,10 +56,12 @@ function App() {
       {/* <header className="App-header">
       </header> */}
       <h1 class="text-6xl font-header-font">Roll for Sandwich</h1>
-      <div id={"lists"} class="space-y-4">
-            {parts.map((item, index) =>
-              <OptionContainer parentIndex={index} parentState={parts}></OptionContainer>
-            )}
+      <div class="container md:max-w-[268px] sm:max-w-[140px] lg:max-w-[524px] xl:max-w-[780px] 2xl:max-w-[936px]">
+        <div id={"lists"} class="space-y-4">
+              {parts.map((item, index) =>
+                <OptionContainer parentIndex={index} parentState={parts}></OptionContainer>
+              )}
+        </div>
       </div>
 
       <div>

@@ -36,12 +36,14 @@ export default function OptionContainer({parentIndex, parentState}){
     }
 
     return(
-        <div class=" h-48 container-sm bg-blue-600" >
-            <div class="grid grid-flow-col overflow-x-auto"id={className+"list"}>
+        <div class="h-48 bg-blue-600 p-5" >
+            <div class="overflow-x-auto grid grid-rows-3 grid-flow-col gap-4"id={className+"list"}>
                 {elements.map((item, index) =>
-                    <div class="space-x-3" key={item.id}>
-                        <input class="outline" onChange={e => handleChange(index, e.target.value)}/>
-                        <button class="outline bg-gray w-6" onClick={() => handleDelete(item.id)}>-</button>
+                    <div class="row-span-1 col-span-2" key={item.id}>
+                        <div class="flex flex-nowrap m-1">
+                            <input class="outline w-48" onChange={e => handleChange(index, e.target.value)}/>
+                            <button class="outline bg-gray w-6 " onClick={() => handleDelete(item.id)}>-</button>
+                        </div>
                     </div>
                 )}
             </div>
