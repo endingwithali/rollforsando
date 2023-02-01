@@ -36,7 +36,7 @@ export default function OptionContainer({parentIndex, parentState}){
     }
 
     return(
-        <div class="h-48 bg-blue-600 p-5" >
+        <div class="h-48 bg-blue-600 p-5 w-full" >
             <div class="overflow-x-auto grid grid-rows-3 grid-flow-col gap-4"id={className+"list"}>
                 {elements.map((item, index) =>
                     <div class="row-span-1 col-span-2" key={item.id}>
