@@ -2,41 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* https://codepen.io/mburridge/pen/VOBWyQ pulled css for stone buttons from here */
+.stone-add-button{
+  margin: auto;
+	width: 230px;
+	height: 50px;
+	background: #eae6ed;
+	display: flex;
+	box-shadow: inset -6px -6px 20px #778, inset 38px 18px 36px #fffffc, 12px 8px 18px hsla(0,0%,0%,0.25);
+  border-radius: 49% 68% 86% 100px /62% 54% 80% 38px;
+  /* box-shadow: inset -28px -22px 36px #778, inset 38px 18px 36px #fffffc, 12px 8px 18px hsla(0,0%,0%,0.25);
+  border-radius: 49% 68% 86% 200px /62% 54% 80% 180px; */
 }
+.stone-content{
+  margin:auto;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

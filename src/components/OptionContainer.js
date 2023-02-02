@@ -36,7 +36,7 @@ export default function OptionContainer({parentIndex, parentState}){
     }
 
     return(
-        <div class="h-48 bg-blue-600 p-5 w-full" >
+        <div class="h-50 bg-blue-600 p-5 container " >
             <div class="overflow-x-auto grid grid-rows-3 grid-flow-col gap-4"id={className+"list"}>
                 {elements.map((item, index) =>
                     <div class="row-span-1 col-span-2" key={item.id}>
@@ -47,7 +47,14 @@ export default function OptionContainer({parentIndex, parentState}){
                     </div>
                 )}
             </div>
-            <button onClick={handleAdd}>Add New Ingredient</button>
+            <div class="mt-4 mr-2">
+                <button class="stone-add-button" onClick={handleAdd}>
+                    <div class="stone-content">
+                        <h1 class="font-header-font">
+                        Add New Ingredient
+                        </h1>
+                    </div></button>
+            </div>
         </div>
     );
 }
