@@ -13,6 +13,7 @@ export default function OptionContainer({parentIndex, parentState}){
     const [parentElements, setParentState] = useState(parentState)
     const initAmount = parentElements[parentIndex].initAmount
     const className = parentElements[parentIndex].id
+    const title = parentElements[parentIndex].title
     const [elements, setElements] = useState(generateArray(initAmount));
 
 
@@ -36,13 +37,14 @@ export default function OptionContainer({parentIndex, parentState}){
     }
 
     return(
-        <div class="h-50 bg-blue-600 p-5 container " >
+        <div class="optioncontainer bg-input bg-repeat-y  p-8 container relative" >
+            <h2 class="text-center font-header-font mb-2">{title}</h2>
             <div class="overflow-x-auto grid grid-rows-3 grid-flow-col gap-4"id={className+"list"}>
                 {elements.map((item, index) =>
                     <div class="row-span-1 col-span-2" key={item.id}>
                         <div class="flex flex-nowrap m-1">
                             <input class="outline w-48" onChange={e => handleChange(index, e.target.value)}/>
-                            <button class="outline bg-gray w-6 " onClick={() => handleDelete(item.id)}>-</button>
+                            <button class="stone-delete-button" onClick={() => handleDelete(item.id)}><div class="stone-content">-</div></button>
                         </div>
                     </div>
                 )}
@@ -50,10 +52,11 @@ export default function OptionContainer({parentIndex, parentState}){
             <div class="mt-4 mr-2">
                 <button class="stone-add-button" onClick={handleAdd}>
                     <div class="stone-content">
-                        <h1 class="font-header-font">
+                        <h1 class="font-header-font ">
                         Add New Ingredient
                         </h1>
-                    </div></button>
+                    </div>
+                </button>
             </div>
         </div>
     );

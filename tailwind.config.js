@@ -12,7 +12,10 @@ module.exports = {
         'header-font':['"Metamorphous"', 'serif']
       },
       backgroundImage: {
-        'hero-pattern': "url('https://www.runescape.com/img/rsp777/title2/rslogo3.png') no-repeat center",
+        'hero': "url('https://www.runescape.com/img/rsp777/bg2.jpg')",
+        'input': "url('https://www.runescape.com/img/rsp777/scroll/backdrop_745.gif')",
+        'scrolltop': "url('https://www.runescape.com/img/rsp777/scroll/backdrop_765_top.gif')",
+        'scrollbottom': "url('https://www.runescape.com/img/rsp777/scroll/backdrop_765_top.gif')",
       }
     },
   },

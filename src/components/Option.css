@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+.optioncontainer::before {
+    background: url(https://www.runescape.com/img/rsp777/scroll/backdrop_765_top.gif) no-repeat center top;
+    content: '';
+    height: 50px;
+    left: -1.5%;
+    position: absolute;
+    top: -16px;
+    width: 103%;
+    background-size: contain;
+}
+
+
+.optioncontainer::after{
+    background: url(https://www.runescape.com/img/rsp777/scroll/backdrop_765_bottom.gif) no-repeat center bottom;
+    content: '';
+    height: 50px;
+    left: -1.5%;
+    position: absolute;
+    bottom: -16px;
+    width: 103%;
+    background-size: contain;
+}
+
