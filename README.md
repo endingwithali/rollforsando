@@ -8,6 +8,7 @@ To run / local develop:
  npm start
 ```
 
+Background image was sourced from Runescape!
 
 This project was inspired by [Jake Pauwels' "Roll for Sandwich"](https://www.polygon.com/23169570/roll-for-sandwich-interview") videos.
 
