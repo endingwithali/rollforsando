@@ -5,13 +5,36 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
+}
+
+
+.papertop {
+  background: url(https://www.runescape.com/img/rsp777/scroll/backdrop_765_top.gif) no-repeat center top;
+  content: '';
+  /* width: 14rem;   */
+  height: 50px;
+  margin-left:-5px;
+  width: 102%;
+  background-size: contain;
+  position: relative;
+}
+
+
+.paperbottom{
+  background: url(https://www.runescape.com/img/rsp777/scroll/backdrop_765_bottom.gif) no-repeat center bottom;
+  content: '';
+  width: 102%;
+  height: 50px;
+  margin-left:-5px;
+  background-size: contain;
+  position: relative;
 }

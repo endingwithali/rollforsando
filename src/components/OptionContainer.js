@@ -37,22 +37,22 @@ export default function OptionContainer({parentIndex, parentState}){
     }
 
     return(
-        <div class="optioncontainer bg-input bg-repeat-y  p-8 container relative" >
-            <h2 class="text-center font-header-font mb-2">{title}</h2>
+        <div class="" >
+            <h2 class="text-center font-bold	 font-header-font mb-2">{title}</h2>
             <div class="overflow-x-auto grid grid-rows-3 grid-flow-col gap-4"id={className+"list"}>
                 {elements.map((item, index) =>
-                    <div class="row-span-1 col-span-2" key={item.id}>
-                        <div class="flex flex-nowrap m-1">
+                    <div class="row-span-1 col-span-2 " key={item.id}>
+                        <div class="flex flex-nowrap m-1 justify-center ">
                             <input class="outline w-48" onChange={e => handleChange(index, e.target.value)}/>
                             <button class="stone-delete-button" onClick={() => handleDelete(item.id)}><div class="stone-content">-</div></button>
                         </div>
                     </div>
                 )}
             </div>
-            <div class="mt-4 mr-2">
+            <div class="mt-2 mr-2 mb-4">
                 <button class="stone-add-button" onClick={handleAdd}>
                     <div class="stone-content">
-                        <h1 class="font-header-font ">
+                        <h1 class="font-header-font text-xs	 ">
                         Add New Ingredient
                         </h1>
                     </div>
