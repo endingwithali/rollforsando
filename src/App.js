@@ -167,7 +167,7 @@ function App() {
      <div class="p-10 flex flex-col md:flex-row ">
       <div class=" md:ml-8 container flex-none sm:w-full  sm:md-0 md:w-3/5 " >
     
-          <h1 class="text-5xl font-header-font text-center text-white mb-5">Roll for Sandwich</h1>
+          <h1 class="text-5xl font-header-font text-center text-white mb-5">Sandwich Generator</h1>
           <div class="optioncontainer p-8 container relative">
                 <div class="bg-input bg-contain z-0 bg-repeat-y pt-3 pb-3 mt-[-25px] mb-[-25px] bg-center">
                 
@@ -186,11 +186,11 @@ function App() {
         </div>
 
           <button class="stone-add-button center" onClick={() => handleRoll()}>
-              <div class="stone-content"><h1 class="font-header-font">Roll for Sandwich</h1></div></button>
+              <div class="stone-content"><h1 class="font-header-fontg text-xs">Generate Sandwich</h1></div></button>
       </div>
       <div class="container flex justify-center center text-white items-start pt-6 w-1/2">
         <div class="items-start sticky h-100">
-          <h2 class="font-header-font center">Roll to make your sandwich</h2>
+          <h2 class="font-header-font center">Generated sandwich</h2>
           <br/>
            {sandwichValues.map((value) =>
               <h2 class="font-header-font center">{value}</h2>
