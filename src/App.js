@@ -167,7 +167,7 @@ function App() {
      <div class="p-10 flex flex-col md:flex-row ">
       <div class=" md:ml-8 container flex-none sm:w-full  sm:md-0 md:w-3/5 " >
     
-          <h1 class="text-5xl font-header-font text-center text-white mb-5">Roll for Sandwich</h1>
+          <h1 class="text-5xl font-header-font text-center text-white mb-5">Sandwich Generator</h1>
           <div class="optioncontainer p-8 container relative">
                 <div class="bg-input bg-contain z-0 bg-repeat-y pt-3 pb-3 mt-[-25px] mb-[-25px] bg-center">
                 
